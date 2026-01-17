@@ -1,9 +1,19 @@
-<h1 class="text-2xl font-bold mb-4"><%= @event.name %></h1>
+<div class="m-4 flex flex-col gap-5">
+  <div>
+    <h1 class="text-2xl font-bold mb-4"><%= @event.name %></h1>
 
-<p class="text-gray-600">
-  <%= @event.date %> - <%= @event.location%>
-</p>
+    <p class="text-gray-600">
+      <%= @event.date %> - <%= @event.location%>
+    </p>
+  </div>
 
-<div class="mt-4">
-  <%= link_to "View Attendees", event_attendees_path(@event), class: "mt-2 underline" %>
+  <div class="flex gap-5">
+    <div class="mt-4">
+      <%= link_to "View Attendees", event_attendees_path(@event), class: "underline" %>
+    </div>
+
+    <div class="mt-4">
+      <%= link_to "Manage Attendees", event_attendees_path(@event), class: "underline" %>
+    </div>
+  </div>
 </div>
