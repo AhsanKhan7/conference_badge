@@ -20,6 +20,16 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def badge
+    attendee  = @event.attendees.find(params[:id])
+    pdf = BadgePdfGenerator.new(attendee).render
+
+    send_data pdf,
+      filename: "badge-#{attendee.full_name.parameterize}.pdf",
+      type: "application/pdf",
+      disposition: "inline"
+  end
+
   private
 
   def set_event

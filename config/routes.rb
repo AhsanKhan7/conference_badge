@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
 
   resources :events do
-    resources :attendees, only: [ :new, :create, :index ]
+    resources :attendees, only: [ :index, :new, :create ] do
+      member do
+        get :badge
+      end
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

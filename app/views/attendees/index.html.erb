@@ -19,6 +19,13 @@
         <%= raw qr.as_svg(module_size: 3) %>
       </svg>
     </div>
+
+    <div class="mt-2">
+      <%= link_to "Download Badge",
+          badge_event_attendee_path(@event, a),
+          class: "underline"
+      %>
+    </div>
     
   </li>
  <% end %>

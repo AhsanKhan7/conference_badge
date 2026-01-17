@@ -61,3 +61,5 @@ end
 
 gem "devise", "~> 4.9"
 gem "rqrcode"
+gem "prawn"
+gem "matrix"
