@@ -24,4 +24,15 @@
   </div>
 
   <%= f.submit "Add Attendee", class: "mt-2 border px-3 py-1" %>
+
+
+  <% if @attendee.errors.any? %>
+  <div class="border p-2 mb-3 text-red-600">
+    <ul>
+      <% @attendee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+
 <% end %>

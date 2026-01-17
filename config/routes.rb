@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "checkins/show"
   get "attendees/index"
   get "attendees/new"
   get "attendees/create"
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   get "events/create"
   devise_for :users
   root "events#index"
+
+  get "/checkin/:token", to: "checkins#show", as: :checkin
 
 
   resources :events do
