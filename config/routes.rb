@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
 
   resources :events do
-    resources :attendees, only: [ :index, :new, :create ] do
+    resources :attendees, only: [ :index, :new, :create, :destroy ] do
       member do
         get :badge
       end
