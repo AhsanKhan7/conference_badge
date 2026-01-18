@@ -11,14 +11,19 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
   <% @attendees.each do |a| %>
     <div class="bg-white p-4 rounded-lg border shadow-sm">
-      <div class="flex justify-between">
-        <div>
-          <p class="font-semibold"><%= a.full_name %></p>
-          <p class="text-sm text-gray-500">
-            <%= a.company %> • <%= a.role %>
-          </p>
-        </div>
+     <div class="flex justify-between">
+      <div>
+        <p class="font-semibold"><%= a.full_name %></p>
+        <p class="text-sm text-gray-500">
+          <%= a.company %> • <%= a.role %>
+        </p>
       </div>
+      <div>
+        <%= link_to "Remove", event_attendee_path(@event, a), 
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this attendee?" },
+        class: "text-red-600 text-sm" %>
+      </div>
+     </div>
 
       <div class="mt-4 flex items-center justify-between">
         <div>

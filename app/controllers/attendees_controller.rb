@@ -20,6 +20,16 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def destroy
+    attendee = @event.attendees.find(params[:id])
+
+    if attendee.destroy
+      redirect_to event_attendees_path(@event), notice: "Attendee Removed"
+    else
+      redirect_to event_attendees_path(@event), alert: "Something went wrong"
+    end
+  end
+
   def badge
     attendee  = @event.attendees.find(params[:id])
     pdf = BadgePdfGenerator.new(attendee).render
