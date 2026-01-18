@@ -29,9 +29,9 @@
     <% end %>
   <% end %>
 
-
-  <%- if controller_name != 'sessions' %>
-    <%= link_to "Log in", new_session_path(resource_name), class: "#{form_submit_classes} mt-10 bg-opacity-40 border" %>
-  <% end %>
-
+  <div class="mt-5">
+    <%- if controller_name != 'sessions' %>
+      <%= link_to "Log in", new_session_path(resource_name), class: form_submit_secondary_classes %>
+    <% end %>
+  </div>
 <% end %>

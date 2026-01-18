@@ -4,7 +4,8 @@ module FormHelper
   FORM_GROUP_CLASSES = "mb-4"
   FORM_LABEL_CLASSES = "block text-sm font-medium text-gray-700 mb-1"
   FORM_INPUT_CLASSES = "w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 px-3 py-2 border"
-  FORM_SUBMIT_CLASSES = "w-full inline-flex items-center justify-center rounded-md bg-red-500 px-4 py-2 text-white font-medium hover:bg-red-600 transition cursor-pointer border-0"
+  FORM_SUBMIT_CLASSES = "w-full inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-white font-medium hover:bg-red-600 transition cursor-pointer border-0"
+  FORM_SUBMIT_SECONDARY_CLASSES = "w-full inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-black font-medium hover:bg-red-600 transition cursor-pointer border"
   FORM_ERRORS_CLASSES = "border border-red-300 bg-red-50 p-3 rounded-md text-red-600 mt-4"
   FORM_ERRORS_LIST_CLASSES = "list-disc list-inside"
 
@@ -26,6 +27,10 @@ module FormHelper
 
   def form_submit_classes
     FORM_SUBMIT_CLASSES
+  end
+
+  def form_submit_secondary_classes
+    FORM_SUBMIT_SECONDARY_CLASSES
   end
 
   def form_errors(object)
