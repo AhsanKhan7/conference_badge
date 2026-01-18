@@ -1,24 +1,5 @@
 <div>
   <h1 class="text-2xl font-bold mb-4">New Event</h1>
 
-  <div class="m-4">
-  <%= form_with model: @event do |f| %>
-    <div class="mb-2">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "border p-1" %>
-    </div>
-
-    <div class="mb-2">
-      <%= f.label :date %>
-      <%= f.date_field :date, class: "border p-1" %>
-    </div>
-
-    <div class="mb-2">
-      <%= f.label :location %>
-      <%= f.text_field :location, class: "border p-1" %>
-    </div>
-
-    <%= f.submit "Create Event", class: "mt-2 border px-3 py-1" %>
-  <% end %>
-  </div>
+  <%= render "form", event: @event %>
 </div>

@@ -1,0 +1,37 @@
+<h1 class="text-2xl font-bold mb-4">
+  Sign up
+</h1>
+
+<%= form_card do %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <%= form_group do %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.submit "Sign up", class: form_submit_classes %>
+    <% end %>
+  <% end %>
+
+
+  <%- if controller_name != 'sessions' %>
+    <%= link_to "Log in", new_session_path(resource_name), class: "#{form_submit_classes} mt-10 bg-opacity-40 border" %>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,27 @@
+<%= form_card do %>
+  <%= form_with model: [event, attendee] do |f| %>
+    <%= form_group do %>
+      <%= f.label :full_name, class: form_label_classes %>
+      <%= f.text_field :full_name, class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.label :company, class: form_label_classes %>
+      <%= f.text_field :company, class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.label :role, class: form_label_classes %>
+      <%= f.text_field :role, class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.label :email, class: form_label_classes %>
+      <%= f.text_field :email, class: form_input_classes %>
+    <% end %>
+
+    <%= f.submit "Add Attendee", class: form_submit_classes %>
+
+    <%= form_errors(@attendee) %>
+  <% end %>
+<% end %>

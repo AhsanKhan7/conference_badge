@@ -1,0 +1,24 @@
+<%= form_card do %>
+  <%= form_with(model: event) do |f| %>
+
+    <%= form_group do %>
+      <%= f.label :name, class: form_label_classes %>
+      <%= f.text_field :name, class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.label :date, class: form_label_classes %>
+      <%= f.date_field :date, class: form_input_classes %>
+    <% end %>
+
+    <%= form_group do %>
+      <%= f.label :location, class: form_label_classes %>
+      <%= f.text_field :location, class: form_input_classes %>
+    <% end %>
+
+    <div class="mt-6">
+      <%= f.submit class: form_submit_classes %>
+    </div>
+
+  <% end %>
+<% end %>
