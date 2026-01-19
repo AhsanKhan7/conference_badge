@@ -98,65 +98,44 @@ rails server
 
 ### Usage Instructions
 
-Events
+# Events
 
-Sign up or log in
+- Sign up or log in
+- Navigate to Events
+- Click New Event → fill in details
+- Delete events safely with confirmation
 
-Navigate to Events
+# Attendees
 
-Click New Event → fill in details
+- Select an event
+- Click Add Attendee
+- Fill in attendee info
+- Delete attendees safely
+- QR codes displayed next to each attendee
+- Download badge PDF with the Badge PDF link
 
-Delete events safely with confirmation
+# QR Code Check-in
 
-Attendees
+- Scan attendee QR code
+- Opens check-in page with attendee info
 
-Select an event
+# PDF Badge
 
-Click Add Attendee
+- Generated via service object
+- Opens inline in browser
+- Ready to print
 
-Fill in attendee info
+## Notes & Best Practices
 
-Delete attendees safely
+- All destructive actions (delete) are confirmed
+- All controller actions enforce ownership via parent associations
+- QR codes are tokenized for security
+- Service objects handle PDF generation for separation of concerns
 
-QR codes displayed next to each attendee
+## Gems / Libraries Used
 
-Download badge PDF with the Badge PDF link
-
-QR Code Check-in
-
-Scan attendee QR code
-
-Opens check-in page with attendee info
-
-PDF Badge
-
-Generated via service object
-
-Opens inline in browser
-
-Ready to print
-
-Notes & Best Practices
-
-All destructive actions (delete) are confirmed
-
-All controller actions enforce ownership via parent associations
-
-QR codes are tokenized for security
-
-Service objects handle PDF generation for separation of concerns
-
-Gems / Libraries Used
-
-Devise
-– authentication
-
-Prawn
-– PDF generation
-
-rqrcode
-– QR code generation
-
-Tailwind CSS – responsive UI
-
-Turbo / Hotwire – optional interactivity
+- Devise - authentication
+- Prawn - PDF generation
+- rqrcode - QR code generation
+- Tailwind CSS - responsive UI
+- Turbo / Hotwire - optional interactivity
