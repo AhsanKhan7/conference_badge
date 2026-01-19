@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Running Rubocop..."
+bundle exec rubocop
+
+echo "Running Brakeman..."
+bundle exec brakeman || true
+
+echo "Running Bundler Audit..."
+bundle exec bundle-audit check --update || true
+
+echo "Ruby scan complete."
