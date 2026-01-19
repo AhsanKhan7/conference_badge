@@ -93,7 +93,7 @@ rails db:migrate
 ### Run the Server
 
 ```bash
-rails server
+bin/dev # or rails server
 ```
 
 ### Usage Instructions
