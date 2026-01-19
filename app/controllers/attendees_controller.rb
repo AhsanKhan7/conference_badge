@@ -46,15 +46,7 @@ class AttendeesController < ApplicationController
     @event = current_user.events.find(params[:event_id])
   end
 
-  # Brakeman false positive:
-  # params are explicitly permitted and scoped to @event
-  # brakeman:ignore PermitAttributes
   def attendee_params
-    params.require(:attendee).permit(
-      :full_name,
-      :company,
-      :role,
-      :email
-    )
+    params.require(:attendee).permit(:full_name, :company, :role, :email)
   end
 end
