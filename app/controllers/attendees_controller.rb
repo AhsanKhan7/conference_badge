@@ -14,7 +14,7 @@ class AttendeesController < ApplicationController
     @attendee = @event.attendees.new(attendee_params)
 
     if @attendee.save
-      redirect_to event_attendees_path(@event), notics: "Attendee Added"
+      redirect_to event_attendees_path(@event), notice: "Attendee Added"
     else
       render :new, status: :unprocessable_entity
     end
